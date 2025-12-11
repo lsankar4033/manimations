@@ -57,7 +57,7 @@ class QuadratureScene(m.Scene):
 
         # Highlight the area of interest
         a = self.ax.get_area(graph, [0, 1], color=m.YELLOW, opacity=0.5).add(
-            m.MathTex("A_2", font_size=20).move_to(self.ax.coords_to_point(0.8, 0.25))
+            m.Text("A₂", font_size=14).move_to(self.ax.coords_to_point(0.8, 0.25))
         )
         self.add(a)
 
@@ -66,36 +66,34 @@ class QuadratureScene(m.Scene):
         # graphs = [self.ax.plot(lambda _: self.c, x_range=[1, 2])]
         # areas = [self.ax.get_area(
         #     graphs[0],
-        #     [1, 2], color=m.RED, opacity=0.5).add(m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 0.5)))]
+        #     [1, 2], color=m.RED, opacity=0.5).add(m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 0.5)))]
         # for i in range(n):
         #     # TODO Make this more general
         #     g = self.ax.plot(lambda x: self.c * (2 * x - 1), x_range=[1, 2])
         #     a = self.ax.get_area(g, bounded_graph=graphs[-1], opacity=0.5)
         #     # TODO Make this part more general too.
-        #     a.add(m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 1.5)))
+        #     a.add(m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 1.5)))
 
         g0 = self.ax.plot(lambda _: self.c, x_range=[1, 2])
         g1 = self.ax.plot(lambda x: self.c * (2 * x - 1), x_range=[1, 2])
 
         a0 = self.ax.get_area(g0, [1, 2], color=m.RED, opacity=0.5).add(
-            m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 0.5))
+            m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 0.5))
         )
         self.play(m.FadeIn(a0, run_time=1.0))
 
         a1 = self.ax.get_area(
             g1, [1, 2], bounded_graph=g0, color=m.BLUE, opacity=0.5
-        ).add(m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 1.5)))
+        ).add(m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 1.5)))
         self.play(m.FadeIn(a1, run_time=1.0))
 
         a2 = self.ax.get_area(
             graph, [1, 2], bounded_graph=g1, color=m.YELLOW, opacity=0.5
-        ).add(
-            m.MathTex("A_2", font_size=20).move_to(self.ax.coords_to_point(1.85, 3.0))
-        )
+        ).add(m.Text("A₂", font_size=14).move_to(self.ax.coords_to_point(1.85, 3.0)))
         self.play(
             m.Transform(
                 self.ax.get_area(graph, [0, 1], color=m.YELLOW, opacity=0.5).add(
-                    m.MathTex("A_2", font_size=20).move_to(
+                    m.Text("A₂", font_size=14).move_to(
                         self.ax.coords_to_point(0.8, 0.25)
                     )
                 ),
@@ -114,7 +112,7 @@ class QuadratureScene(m.Scene):
 
         # Highlight the area of interest
         a = self.ax.get_area(graph, [0, 1], color=m.YELLOW, opacity=0.5).add(
-            m.MathTex("A_2", font_size=20).move_to(self.ax.coords_to_point(0.8, 0.25))
+            m.Text("A₂", font_size=14).move_to(self.ax.coords_to_point(0.8, 0.25))
         )
         self.add(a)
 
@@ -127,24 +125,22 @@ class QuadratureScene(m.Scene):
         g1 = self.ax.plot(lambda x: self.c * (2 * x - 1), x_range=[1, 2])
 
         a0 = self.ax.get_area(g0, [1, 2], color=m.RED, opacity=0.5).add(
-            m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 0.5))
+            m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 0.5))
         )
         self.play(m.FadeIn(a0, run_time=1.0))
 
         a1 = self.ax.get_area(
             g1, [1, 2], bounded_graph=g0, color=m.BLUE, opacity=0.5
-        ).add(m.MathTex("1", font_size=20).move_to(self.ax.coords_to_point(1.5, 1.5)))
+        ).add(m.Text("1", font_size=14).move_to(self.ax.coords_to_point(1.5, 1.5)))
         self.play(m.FadeIn(a1, run_time=1.0))
 
         a2 = self.ax.get_area(
             graph, [1, 2], bounded_graph=g1, color=m.YELLOW, opacity=0.5
-        ).add(
-            m.MathTex("A_2", font_size=20).move_to(self.ax.coords_to_point(1.85, 3.0))
-        )
+        ).add(m.Text("A₂", font_size=14).move_to(self.ax.coords_to_point(1.85, 3.0)))
         self.play(
             m.Transform(
                 self.ax.get_area(graph, [0, 1], color=m.YELLOW, opacity=0.5).add(
-                    m.MathTex("A_2", font_size=20).move_to(
+                    m.Text("A₂", font_size=14).move_to(
                         self.ax.coords_to_point(0.8, 0.25)
                     )
                 ),
